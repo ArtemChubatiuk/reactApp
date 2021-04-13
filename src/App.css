@@ -10,26 +10,5 @@
     grid-auto-columns: 2fr 10fr;
     /* grid-gap: 10px;
      */
-}
 
-.header{
-    grid-area: h;
-    background-color: chartreuse;
-}
-
-.header img {
-    width: 60px;
-}
-
-.nav{
-    grid-area: n;
-    background-color: aqua;
-}
-
-.content{
-    grid-area: s;
-    background-color: coral;
-}
-.content img {
-    width: 300px;
 }
