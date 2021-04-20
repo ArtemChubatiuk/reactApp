@@ -1,4 +1,4 @@
-.app-wrapper{
+.app-wrapper {
     margin: 0 auto;
     display: grid;
     width: 1200px;
@@ -10,5 +10,9 @@
     grid-auto-columns: 2fr 10fr;
     /* grid-gap: 10px;
      */
+}
 
+.app-wrapper-content {
+    grid-area: s;
+    background-color: coral;
 }
