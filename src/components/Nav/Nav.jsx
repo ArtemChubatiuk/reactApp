@@ -10,7 +10,7 @@ let classes = {
 */
 
 const Nav = () => {
-    return(
+    return (
         <nav className={classes.nav}>
             <div className={classes.item}>
                 <NavLink to="/profile" activeClassName={classes.active}>Profile</NavLink>
