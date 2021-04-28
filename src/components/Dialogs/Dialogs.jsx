@@ -2,37 +2,41 @@ import React from "react";
 import classes from "./Dialogs.module.css";
 import {NavLink} from "react-router-dom";
 
+const DialogItem = (props) => {
+    let path = "/dialogs/" + props.id;
+
+    return (
+        <div className={classes.dialog + ' ' + classes.active}>
+            <NavLink to={path}>{props.name}</NavLink>
+        </div>
+    )
+}
+
+const Message = (props) => {
+    return <div className={classes.dialog}>{props.message}</div>
+}
+
 const Dialogs = (props) => {
     return (
         <div className={classes.dialogs}>
             <div className={classes.dialogsItems}>
-                <div className={classes.dialog + ' ' + classes.active}>
-                    <NavLink to="/dialogs/1" activeClassName={classes.active}>Artemy</NavLink>
-                </div>
-                <div className={classes.dialog}>
-                    <NavLink to="/dialogs/2" activeClassName={classes.active}>Dmytro</NavLink>
-                </div>
-                <div className={classes.dialog}>
-                    <NavLink to="/dialogs/3" activeClassName={classes.active}>Denisca</NavLink>
-                </div>
-                <div className={classes.dialog}>
-                    <NavLink to="/dialogs/4" activeClassName={classes.active}>Evgeny</NavLink>
-                </div>
-                <div className={classes.dialog}>
-                    <NavLink to="/dialogs/5" activeClassName={classes.active}>Vlados</NavLink>
-                </div>
-                <div className={classes.dialog}>
-                    <NavLink to="/dialogs/6" activeClassName={classes.active}>Svyatoslav</NavLink>
-                </div>
-                <div className={classes.dialog}>
-                    <NavLink to="/dialogs/7" activeClassName={classes.active}>Anka</NavLink>
-                </div>
+                <DialogItem name="Artemy" id="1"/>
+                <DialogItem name="Dmytro" id="2"/>
+                <DialogItem name="Denisca" id="3"/>
+                <DialogItem name="Evgeny" id="4"/>
+                <DialogItem name="Vlados" id="5"/>
+                <DialogItem name="Svyatoslav" id="6"/>
+                <DialogItem name="Anka" id="7"/>
             </div>
 
             <div className={classes.messages}>
-                <div className={classes.message}>Hi</div>
-                <div className={classes.message}>How are you man?</div>
-                <div className={classes.message}>Thx</div>
+                <Message message="приветули"/>
+                <Message message="как делишки?"/>
+                <Message message="когда гулять?"/>
+                <Message message="нормуль вот мой номер"/>
+                <Message message="0976965736"/>
+                <Message message="наберешь"/>
+                <Message message="когда вийдешь!"/>
             </div>
         </div>
     )
