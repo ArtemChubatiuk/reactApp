@@ -5,14 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import state from './redax/state';
 import {BrowserRouter} from "react-router-dom";
+import {addPost} from "./redax/state";
 
+/*addPost("sss");*/
 
 ReactDOM.render(
     /*<React.StrictMode>
         <App state={state}/>
     </React.StrictMode>,*/
     <BrowserRouter>
-        <App state={state}/>
+        <App state={state} addPost={addPost}/>
     </BrowserRouter>,
     document.getElementById('root')
 );
