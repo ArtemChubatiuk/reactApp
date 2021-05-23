@@ -6,6 +6,7 @@ import Profile from "./components/Profile/Profile";
 import Dialogs from "./components/Dialogs/Dialogs";
 import Musing from "./components/Musing/Musing";
 import {BrowserRouter, Route} from "react-router-dom";
+import {addPost} from "./redax/state";
 
 const App = (props) => {
 

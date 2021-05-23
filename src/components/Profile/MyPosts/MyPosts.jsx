@@ -1,17 +1,19 @@
 import React from "react";
 import classes from './MyPosts.module.css'
 import Post from "./Post/Post";
+import {addPost} from "../../../redax/state";
 
 const MyPosts = (props) => {
 
     let postsElements =
         props.postData.map( p => <Post message={p.post} likes={p.likes}/>);
 
-    let newPotElement =React.createRef();
+    let newPostElement =React.createRef();
 
     let addPost = () => {
-        let text = newPotElement.current.value;
+        let text = newPostElement.current.value;
         props.addPost(text);
+        newPostElement.current.value = '';
     }
 
     return (
@@ -19,7 +21,7 @@ const MyPosts = (props) => {
             <h3>My posts</h3>
             <div>
                 <div>
-                    <textarea ref={newPotElement}></textarea>
+                    <textarea ref={newPostElement}></textarea>
                 </div>
                 <div>
                     <button onClick={ addPost }>Add post</button>
